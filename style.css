@@ -11,6 +11,8 @@ html, body {
     /* configure the size of the map */
     position: center;
     padding: 30px;
+    height: 30%;
+    width: 80%;
 }
 
 #map {
