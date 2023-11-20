@@ -1,12 +1,86 @@
 
 html, body {
     height: 100%;
+    background: #f7f5ec;
     padding: 0;
     margin: 0;
-  }
+    font-family: "Audiowide", sans-serif;
+}
+
+#map-container {
+    /* configure the size of the map */
+    position: center;
+    padding: 30px;
+}
 
 #map {
-/* configure the size of the map */
-width: 50%;
-height: 50%;
+    position: relative;
+    height: 800px; 
+    border:1px dashed #03062e;
+    border-radius: 5px;
 }
+
+.legendbox {
+    font-family: "Lucida Console", "Courier New", monospace;
+    width: 150px;
+    border:1px dashed #f7f5ec;
+    border-radius: 5px;
+    padding: 10px;
+    opacity: 0.5;
+    background: #03062e;
+    color: #f7f5ec;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+#title {
+    font-family: "Playfair Display";
+    overflow: hidden;
+    position: absolute;  
+    float:right;   
+    font-size: 26px;
+    line-height: 10px;
+    padding: 10px;
+    margin: 10px;
+    top: 0;
+    color: #f7f5ec;
+    z-index: 1001
+}
+
+/* bar */
+#topnav {
+    background-color: #03062e;
+    overflow: hidden;
+    height: 100px;
+    
+  }
+
+  #topnav .title {
+    font-family: "Playfair Display";
+    position: absolute;  
+    float: left;   
+    font-size: 26px;
+    padding: 10px 16px;
+    line-height: 10px;
+    margin: 10px;
+    top: 0;
+    left: 30px;
+    color: #f7f5ec;
+    z-index: 1001
+  }
+  
+  /* links */
+  #topnav a {
+    top: 50px;
+    float: right;
+    position: relative; 
+    color: #f7f5ec;
+    padding: 10px 16px;
+    font-size: 17px;
+  }
+  
+  /* hover links */
+  #topnav a:hover {
+    background-color: #c4c705;
+    color: #050613;
+  }

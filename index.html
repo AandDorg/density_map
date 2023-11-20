@@ -14,14 +14,25 @@
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
   </head>
   <body>
-    <h3>Maps Demo</h3>
+    <header>
+      <div id="topnav">
+        <div class="title"><h1>Density Map</h1></div>
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </Div>
+    </header>
+    <!--div id="title"><h1> Density Map</h1></div-->
     <!--The div element for the map -->
-    <div id="map"></div>
-    <script src = "densitymap.js"></script>
-
-
+    <div id="map-container">
+      <div id="map">  
+        <script src = "density_map.js"></script>
+      </div>
+    </div>
     <!-- prettier-ignore -->
   </body>
 </html>
