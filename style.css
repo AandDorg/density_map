@@ -20,7 +20,6 @@ header{
     grid-template-areas: 
     "title description"
     "line line";
-    background: linear-gradient(to right, #E9F8FF #90B2D8, #C1E3FF);
 }
 
 #heading-title{

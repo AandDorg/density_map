@@ -1,8 +1,22 @@
 """
 Calculations for data and storing them in JSON files 
 
+"""
 
-Data fields by city? 
+import requests 
+
+host = 'https://api.census.gov/data'
+year = '/2020'
+dataset_acronym = '/dec/dhc'
+g = '?get='
+variables = 'NAME,P1_001N'
+location = '&for=state:871'
+
+usr_key = "&key=52eb42bcce51db27538d66ad91d4ceb476f37c47"
+query_url = f"{host}{year}{dataset_acronym}{g}{variables}{location}{usr_key}"
+response = requests.get(query_url)
+print(response.text)
+
 """
 
 import csv, json
@@ -41,3 +55,5 @@ with open('simplemaps_uscounties_basicv1.73/uscounties.csv', mode = 'r') as file
 
 with open('data_to_use.json', 'w') as f:     
     json.dump(county_population_list, f)
+
+"""
