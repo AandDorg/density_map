@@ -50,3 +50,17 @@ function getColor(d) {
 }  
 
 legend.addTo(map);
+
+var shpfile = new L.Shapefile('cb_2020_us_zcta520_500k.zip',{
+    onEachFeature:function(feature, layer)
+        {layer.bindPopup('<b> Population: </b>' + feature.properties.ZCTA5CE20)}
+    }).addTo(map)
+
+var holder=[]; 
+for (var key in feature.properties){
+    holder.push(key+': “+feature.properties[key]+”<br>');
+    popupContent=holder.join(""); 
+    layer.bindPopup(popupContent);
+    } shapefile.addTo(map);
+
+
