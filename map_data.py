@@ -10,13 +10,14 @@ host = 'https://api.census.gov/data'
 year = '/2020'
 dataset_acronym = '/dec/dhc'
 g = '?get='
-variables = 'P1_001N,' #population variable, can add NAME 
+variables = 'P1_001N,NAME' #population variable, can add NAME 
 location = '&for=zip%20code%20tabulation%20area%20(or%20part):*&in=state:34' 
 
 usr_key = "&key=52eb42bcce51db27538d66ad91d4ceb476f37c47" #probably should store this in a safer place!!
 query_url = f"{host}{year}{dataset_acronym}{g}{variables}{location}{usr_key}"
 response = requests.get(query_url)
-print(response.text)
+response_json = response.json()
+
 
 """
 
