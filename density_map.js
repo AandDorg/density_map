@@ -1,4 +1,3 @@
-
 // initialize Leaflet
 var map = L.map('map').setView({lon: -98.230850, lat: 38.938048}, 4.5);
 
@@ -51,16 +50,42 @@ function getColor(d) {
 
 legend.addTo(map);
 
-var shpfile = new L.Shapefile('cb_2020_us_zcta520_500k.zip',{
-    onEachFeature:function(feature, layer)
-        {layer.bindPopup('<b> Population: </b>' + feature.properties.ZCTA5CE20)}
-    }).addTo(map)
+// adding ZCTA layer onto the map
 
-var holder=[]; 
-for (var key in feature.properties){
-    holder.push(key+': “+feature.properties[key]+”<br>');
-    popupContent=holder.join(""); 
-    layer.bindPopup(popupContent);
-    } shapefile.addTo(map);
+import ZCTA_population_json from 'ZCTA_population_data.json'; //with path
+var json_parsed = $.parseJSON(ZCTA_population_json);
+var ZCTA_population_items = json_parsed.Items;
 
+function get_ZCTA_population(zcta_number) {
+    for (var i = 1; i < ZCTA_population_items.length; ++i) {
+        if (Number(ZCTA_population_items[i][3]) == Number(zcta_number)){
+            return ZCTA_population_items[i][0];
+        }
+    }
+}
 
+console.log(get_ZCTA_population("08109"));
+/*
+var ZCTA_map = L.geoJson(us_ZCTA,{
+    onEachFeature: function( _feature, layer){
+        layer.bindPopup('<p> Zipcode: '+layer.feature.properties.ZCTA5CE20+'</p><br><p>Population: '+ get_ZCTA_population(layer.feature.properties.ZCTA5CE20)+'</p>');
+        layer.on('mouseover', function (e){
+            this.openPopup();
+        });
+    }
+}).addTo(map);
+*/
+
+// hue based on population of each ZCTA area 
+
+/*
+L.geoJSON(us_ZCTA, {
+    style: function(feature) {
+        switch (features.properties.ZCTA5CE20) {
+            case 'Republican': return {color: "#ff0000"};
+            case 'Democrat':   return {color: "#0000ff"};
+        }
+    }
+}).addTo(map);
+
+*/
