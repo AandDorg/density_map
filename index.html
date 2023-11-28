@@ -1,51 +1,62 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Density Map</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="">
-    <link rel="stylesheet" href = "style.css"> 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script> src = "cb_2020_us_zcta520_500k.js"</script>
-  </head>
-  <body>
-    <header>
-      <div id="heading-title">
-        <div class="title">
-          <h1>Density Map</h1>
-          <h5>a geovisualization project by Danielle and Alison</h5>
-        </div>
-      </div>
-      <div id="heading-description">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio libero molestias quae amet sunt neque.</p>
-      </div>
-      <div class="h_line"></div>
-    </header>
-    <div id="map-container">
-      <div id="map">  
-        <script src = "density_map.js"></script>
-      </div>
-      <div id="map-right-section">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At, sint quod? Iure distinctio tenetur reprehenderit optio reiciendis magni harum quod, repudiandae minus facilis cupiditate in est, dolore magnam laudantium atque.</p>
-      </div>
+<head>
+  <title>Density Map</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src = "https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="heading-title">
+      <div class="title">
+        <h1>Density Map</h1>
+        <h5>a geovisualization project by Danielle and Alison</h5>
       </div>
     </div>
-    <div id="project-writing">
-      <h2>Project Description</h2>
-      <div class="h_line"></div>
-      <div id="project-description">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus harum cumque ut ex provident! Nostrum alias, excepturi beatae eum velit porro soluta pariatur id sint praesentium labore nam voluptates aliquid, quae blanditiis repellat laborum quasi iure mollitia eius voluptatum! Vitae pariatur qui aut? Pariatur reiciendis repudiandae et, quisquam iste rem aut. Aliquam accusamus ad ab culpa sint, dicta ducimus ipsum libero temporibus totam obcaecati atque odit architecto vel voluptatibus reprehenderit minima quia itaque nisi tempora, vero magnam! Perspiciatis odit qui recusandae doloremque magni consequuntur. Consectetur quas illum quos vel reprehenderit vitae consequatur ab natus nobis ut quidem voluptatem quis quod ea, explicabo hic, obcaecati, magni maxime amet tempora nihil porro nisi unde? Consequatur, odio? Suscipit beatae saepe ut nobis a.</p>
-      </div>
+    <div id="heading-description">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio libero molestias quae amet sunt neque.</p>
     </div>
-    <!-- prettier-ignore -->
-  </body>
+    <div class="h_line"></div>
+  </header>
+  <div id="map-container">
+    <div id="map">
+      <script src ="cb_2020_us_zcta520_500k.js"></script> 
+      <script type = "module" src="density_map.js"></script>
+    </div>
+    <div id="map-right-section">
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At, sint quod? Iure distinctio tenetur reprehenderit
+        optio reiciendis magni harum quod, repudiandae minus facilis cupiditate in est, dolore magnam laudantium atque.
+      </p>
+    </div>
+  </div>
+  </div>
+  <div id="project-writing">
+    <h2>Project Description</h2>
+    <div class="h_line"></div>
+    <div id="project-description">
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus harum cumque ut ex provident! Nostrum
+        alias, excepturi beatae eum velit porro soluta pariatur id sint praesentium labore nam voluptates aliquid, quae
+        blanditiis repellat laborum quasi iure mollitia eius voluptatum! Vitae pariatur qui aut? Pariatur reiciendis
+        repudiandae et, quisquam iste rem aut. Aliquam accusamus ad ab culpa sint, dicta ducimus ipsum libero temporibus
+        totam obcaecati atque odit architecto vel voluptatibus reprehenderit minima quia itaque nisi tempora, vero
+        magnam! Perspiciatis odit qui recusandae doloremque magni consequuntur. Consectetur quas illum quos vel
+        reprehenderit vitae consequatur ab natus nobis ut quidem voluptatem quis quod ea, explicabo hic, obcaecati,
+        magni maxime amet tempora nihil porro nisi unde? Consequatur, odio? Suscipit beatae saepe ut nobis a.</p>
+    </div>
+  </div>
+  <!-- prettier-ignore -->
+</body>
+
 </html>
